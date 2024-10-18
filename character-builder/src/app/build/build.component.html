@@ -1,0 +1,68 @@
+<form (ngSubmit)="buildCharacter()" class="p-3">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        @if (charSrc() !== '') {
+          <img [src]="charSrc()" alt="character" class="img-fluid">
+        }
+      </div>
+      <div class="col-md-8">
+        <form (ngSubmit)="buildCharacter()" class="p-3">
+          <div class="form-row mb-3">
+            <div class="col">
+              <label for="eye">Eye:</label>
+              <select [(ngModel)]="eye" name="eye" id="eye" class="form-control">
+                <option value="NoEye">NoEye</option>
+                <option value="HalfOpen">Half Open</option>
+                <option value="Open">Open</option>
+                <option value="Closed">Closed</option>
+              </select>
+            </div>
+            <div class="col">
+              <div class="form-check mt-4">
+                <input type="checkbox" [(ngModel)]="hammer" id="has-hammer" name="has-hammer" class="form-check-input">
+                <label for="has-hammer" class="form-check-label">Has Hammer</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row mb-3">
+            <div class="col">
+              <label for="mouth">Mouth</label>
+              <select id="mouth" name="mouth" [(ngModel)]="mouth" class="form-control">
+                <option value="Normal">Normal</option>
+                <option value="NoMouth">No Mouth</option>
+                <option value="Unhappy">Unhappy</option>
+                <option value="Happy">Happy</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row mb-3">
+            <div class="col">
+              <label for="right-hand">Right Hand</label>
+              <select id="right-hand" name="right-hand" [(ngModel)]="rightHand" class="form-control">
+                <option value="Normal">Normal</option>
+                <option value="NoHand">No Hand</option>
+                <option value="Victory">Victory</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row mb-3">
+            <div class="col">
+              <div class="form-check">
+                <input type="checkbox" [(ngModel)]="tail" id="tail" name="tail" class="form-check-input">
+                <label for="tail" class="form-check-label">Tail</label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Build Image</button>
+          <button type="submit" (click)="getRandomCharacter()" class="btn btn-primary">Feeling Lucky</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</form>
