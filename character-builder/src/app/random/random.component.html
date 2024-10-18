@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-center">
+  <button class="btn btn-primary m-2" (click)="makeBigger()">+</button>
+  <button class="btn btn-primary m-2" (click)="makeSmaller()">-</button>
+  <button class="btn btn-primary m-2" (click)="getRandomImage()">Next</button>
+</div>
+
+@if (imageSrc() !== '') {
+  <img [src]="imageSrc()" alt="Random Character" class="m-2">
+}
